@@ -31,9 +31,17 @@
       <div class="container">
         <h1 class="editable" data-lang="pt">Projetos</h1>
         <h1 class="editable" data-lang="en" style="display:none;">Projects</h1>
-        
+
         <div id="project-list">
           <p>Carregando projetos...</p>
+        </div>
+
+        <!-- Painel de Administração -->
+        <div id="admin-panel" style="display:none; margin-top: 2rem;">
+          <h3>Adicionar Projeto</h3>
+          <input type="text" id="project-name" placeholder="Nome do projeto" />
+          <textarea id="project-description" placeholder="Descrição do projeto"></textarea>
+          <button onclick="addProject()">Salvar Projeto</button>
         </div>
       </div>
     </section>
@@ -50,6 +58,7 @@
     const API_URL = "https://cesarmalaguti-site-backend.onrender.com";
     const projectList = document.getElementById("project-list");
 
+    // Carrega os projetos existentes
     fetch(`${API_URL}/projects`)
       .then((res) => res.json())
       .then((data) => {
@@ -61,6 +70,7 @@
         const html = data.map((project) => `
           <div class="project-item">
             <h2>${project.name}</h2>
+            <p>${project.description || ""}</p>
           </div>
         `).join("");
 
@@ -70,13 +80,17 @@
         projectList.innerHTML = "<p>Erro ao carregar projetos.</p>";
         console.error(err);
       });
-  </script>
 
-  <script src="js/script.js"></script>
-  <script src="js/language.js"></script>
-  <script src="js/admin.js"></script>
-</body>
-</html>
+    // Exibe painel de admin se estiver logado
+    if (localStorage.getItem("admin") === "true") {
+      document.getElementById("admin-panel").style.display = "block";
+    }
+
+    // Função para adicionar novo projeto
+    function addProject() {
+      const name = document.getElementById("project-name").value.trim();
+      const description = document.getElementById("project
+
 
 
 
