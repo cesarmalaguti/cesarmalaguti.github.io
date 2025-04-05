@@ -43,12 +43,42 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html" class="active">Sobre</a></li>
-                    <li><a href="publications.html">Publicações</a></li>
-                    <li><a href="projects.html">Projetos</a></li>
-                    <li><a href="experience.html">Experiência</a></li>
-                    <li><a href="education.html">Formação</a></li>
-                    <li><a href="contact.html">Contato</a></li>
+                    <li>
+                        <a href="index.html" class="active">
+                            <span data-lang="pt">Sobre</span>
+                            <span data-lang="en" style="display: none;">About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="publications.html">
+                            <span data-lang="pt">Publicações</span>
+                            <span data-lang="en" style="display: none;">Publications</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projects.html">
+                            <span data-lang="pt">Projetos</span>
+                            <span data-lang="en" style="display: none;">Projects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="experience.html">
+                            <span data-lang="pt">Experiência</span>
+                            <span data-lang="en" style="display: none;">Experience</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="education.html">
+                            <span data-lang="pt">Formação</span>
+                            <span data-lang="en" style="display: none;">Education</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html">
+                            <span data-lang="pt">Contato</span>
+                            <span data-lang="en" style="display: none;">Contact</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -78,8 +108,6 @@
 
                 <p data-lang="pt">Minha pesquisa se concentra na interseção entre economia do setor público, políticas de saúde, ciência de dados e economia aplicada.</p>
                 <p data-lang="en" style="display: none;">My research lies at the intersection of public economics, health policy, data science and applied economics.</p>
-
-       
             </div>
         </section>
     </main>
@@ -95,15 +123,20 @@
         function switchLanguage(lang) {
             const elements = document.querySelectorAll('[data-lang]');
             elements.forEach(el => {
-                el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+                el.style.display = el.getAttribute('data-lang') === lang ? 'inline' : 'none';
             });
+            localStorage.setItem('preferredLanguage', lang);
         }
 
-        // Define idioma inicial como pt
-        window.onload = () => switchLanguage('pt');
+        // Detecta o idioma salvo
+        window.onload = () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'pt';
+            switchLanguage(savedLang);
+        };
     </script>
 </body>
 </html>
+
 
 
 
