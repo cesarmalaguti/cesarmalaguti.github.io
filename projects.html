@@ -32,16 +32,14 @@
         <h1 class="editable" data-lang="pt">Projetos</h1>
         <h1 class="editable" data-lang="en" style="display:none;">Projects</h1>
 
-        <div id="project-list">
-          <p>Carregando projetos...</p>
-        </div>
+        <div id="project-list">Carregando projetos...</div>
 
-        <!-- Painel de Administração -->
-        <div id="admin-panel" style="display:none; margin-top: 2rem;">
+        <!-- Admin Panel -->
+        <div id="admin-panel" style="display:none; margin-top:2rem;">
           <h3>Adicionar Projeto</h3>
-          <input type="text" id="project-name" placeholder="Nome do projeto" />
-          <textarea id="project-description" placeholder="Descrição do projeto"></textarea>
-          <button onclick="addProject()">Salvar Projeto</button>
+          <input type="text" id="new-project-name" placeholder="Nome do projeto" />
+          <textarea id="new-project-description" placeholder="Descrição do projeto"></textarea>
+          <button onclick="addProject()">Salvar</button>
         </div>
       </div>
     </section>
@@ -58,38 +56,98 @@
     const API_URL = "https://cesarmalaguti-site-backend.onrender.com";
     const projectList = document.getElementById("project-list");
 
-    // Carrega os projetos existentes
-    fetch(`${API_URL}/projects`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.length === 0) {
-          projectList.innerHTML = "<p>Nenhum projeto cadastrado ainda.</p>";
-          return;
-        }
+    let projects = [];
 
-        const html = data.map((project) => `
-          <div class="project-item">
-            <h2>${project.name}</h2>
-            <p>${project.description || ""}</p>
-          </div>
-        `).join("");
+    function renderProjects() {
+      if (projects.length === 0) {
+        projectList.innerHTML = "<p>Nenhum projeto cadastrado ainda.</p>";
+        return;
+      }
 
-        projectList.innerHTML = html;
+      const html = projects.map((project, index) => `
+        <div class="project-item">
+          <input value="${project.name}" onchange="updateField(${index}, 'name', this.value)" />
+          <textarea onchange="updateField(${index}, 'description', this.value)">${project.description || ""}</textarea>
+          <button onclick="saveProject(${index})">Salvar</button>
+          <button onclick="deleteProject(${index})">Excluir</button>
+        </div>
+      `).join("");
+
+      projectList.innerHTML = html;
+    }
+
+    function loadProjects() {
+      fetch(`${API_URL}/projects`)
+        .then(res => res.json())
+        .then(data => {
+          projects = data;
+          renderProjects();
+        })
+        .catch(() => {
+          projectList.innerHTML = "<p>Erro ao carregar projetos.</p>";
+        });
+    }
+
+    function updateField(index, field, value) {
+      projects[index][field] = value;
+    }
+
+    function saveProject(index) {
+      fetch(`${API_URL}/projects/${index}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(projects[index])
       })
-      .catch((err) => {
-        projectList.innerHTML = "<p>Erro ao carregar projetos.</p>";
-        console.error(err);
-      });
+        .then(res => res.json())
+        .then(() => {
+          alert("Projeto salvo!");
+          loadProjects();
+        });
+    }
 
-    // Exibe painel de admin se estiver logado
+    function deleteProject(index) {
+      if (!confirm("Tem certeza que deseja excluir este projeto?")) return;
+
+      fetch(`${API_URL}/projects/${index}`, {
+        method: "DELETE"
+      })
+        .then(res => res.json())
+        .then(() => {
+          alert("Projeto excluído!");
+          loadProjects();
+        });
+    }
+
+    function addProject() {
+      const name = document.getElementById("new-project-name").value.trim();
+      const description = document.getElementById("new-project-description").value.trim();
+
+      if (!name || !description) {
+        alert("Preencha todos os campos.");
+        return;
+      }
+
+      fetch(`${API_URL}/projects`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, description })
+      })
+        .then(res => res.json())
+        .then(() => {
+          alert("Projeto adicionado!");
+          document.getElementById("new-project-name").value = "";
+          document.getElementById("new-project-description").value = "";
+          loadProjects();
+        });
+    }
+
     if (localStorage.getItem("admin") === "true") {
       document.getElementById("admin-panel").style.display = "block";
     }
 
-    // Função para adicionar novo projeto
-    function addProject() {
-      const name = document.getElementById("project-name").value.trim();
-      const description = document.getElementById("project
+    loadProjects();
+  </script>
+
 
 
 
