@@ -6,22 +6,69 @@
   <title data-lang="pt">Publicações | César Malaguti</title>
   <title data-lang="en" style="display: none;">Publications | César Malaguti</title>
 
-  <!-- Fontes e estilos -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="css/style.css"/>
   <link rel="stylesheet" href="css/admin.css"/>
 
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      background-color: #f8f9fa;
+      color: #333;
+      padding-top: 80px;
+    }
+
+    header {
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+      justify-content: center;
+      padding: 0.5rem 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    nav a.active {
+      font-weight: 600;
+      border-bottom: 2px solid #333;
     }
 
     .language-switcher {
-      position: absolute;
+      position: fixed;
       top: 1rem;
       right: 1rem;
+      z-index: 2000;
     }
 
     .language-switcher img {
@@ -33,24 +80,36 @@
 
     h1, h2, h3 {
       font-weight: 600;
+      margin-top: 1.5rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
     }
 
     .publication-item {
       margin-bottom: 1.5rem;
     }
+
+    footer {
+      text-align: center;
+      margin: 4rem auto 2rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
   </style>
 </head>
 <body>
+  <!-- Idioma -->
   <div class="language-switcher">
     <img src="img/br-flag.png" alt="Português" onclick="setLanguage('pt')" />
     <img src="img/uk-flag.png" alt="English" onclick="setLanguage('en')" />
   </div>
 
+  <!-- Cabeçalho -->
   <header>
     <div class="container">
-      <div class="logo">
-        <a href="index.html">César Malaguti</a>
-      </div>
       <nav>
         <ul>
           <li><a href="index.html" data-lang="pt">Sobre</a><a href="index.html" data-lang="en" style="display: none;">About</a></li>
@@ -64,103 +123,89 @@
     </div>
   </header>
 
-  <main>
-    <section class="publications">
-      <div class="container">
-        <h1 data-lang="pt">Publicações</h1>
-        <h1 data-lang="en" style="display: none;">Publications</h1>
+  <!-- Conteúdo principal -->
+  <main class="container">
+    <section>
+      <h1 data-lang="pt">Publicações</h1>
+      <h1 data-lang="en" style="display: none;">Publications</h1>
 
-        <!-- TESSES -->
-        <div class="publication-category">
-          <h2 data-lang="pt">Teses e Dissertações</h2>
-          <h2 data-lang="en" style="display: none;">Theses and Dissertations</h2>
-          <ul>
-            <li class="publication-item">
-              <h3 data-lang="pt">Tese de Doutorado (em andamento)</h3>
-              <h3 data-lang="en" style="display: none;">Doctoral Thesis (in progress)</h3>
-              <p data-lang="pt">"Uma Análise dos Programas Qualis-APS, PGAQ e Mais Médicos como Políticas Públicas no Espírito Santo"</p>
-              <p data-lang="en" style="display: none;">"An Analysis of the Qualis-APS, PGAQ, and Mais Médicos Programs as Public Policies in Espírito Santo"</p>
-              <p data-lang="pt">Universidade Federal do Espírito Santo, 2023-atual</p>
-              <p data-lang="en" style="display: none;">Federal University of Espírito Santo, 2023-present</p>
-            </li>
+      <!-- TESSES -->
+      <div>
+        <h2 data-lang="pt">Teses e Dissertações</h2>
+        <h2 data-lang="en" style="display: none;">Theses and Dissertations</h2>
+        <ul>
+          <li class="publication-item">
+            <h3 data-lang="pt">Tese de Doutorado (em andamento)</h3>
+            <h3 data-lang="en" style="display: none;">Doctoral Thesis (in progress)</h3>
+            <p data-lang="pt">"Uma Análise dos Programas Qualis-APS, PGAQ e Mais Médicos como Políticas Públicas no Espírito Santo"</p>
+            <p data-lang="en" style="display: none;">"An Analysis of the Qualis-APS, PGAQ, and Mais Médicos Programs as Public Policies in Espírito Santo"</p>
+            <p data-lang="pt">Universidade Federal do Espírito Santo, 2023-atual</p>
+            <p data-lang="en" style="display: none;">Federal University of Espírito Santo, 2023-present</p>
+          </li>
 
-            <li class="publication-item">
-              <h3 data-lang="pt">Dissertação de Mestrado</h3>
-              <h3 data-lang="en" style="display: none;">Master's Dissertation</h3>
-              <p data-lang="pt">"COVID-19 e o Mercado de Seguros no Brasil: Uma Análise em Nível Estadual Usando Dados em Painel"</p>
-              <p data-lang="en" style="display: none;">"COVID-19 and the Insurance Market in Brazil: A State-Level Analysis Using Panel Data"</p>
-              <p data-lang="pt">Universidade Federal do Espírito Santo, 2023</p>
-              <p data-lang="en" style="display: none;">Federal University of Espírito Santo, 2023</p>
-            </li>
+          <li class="publication-item">
+            <h3 data-lang="pt">Dissertação de Mestrado</h3>
+            <h3 data-lang="en" style="display: none;">Master's Dissertation</h3>
+            <p data-lang="pt">"COVID-19 e o Mercado de Seguros no Brasil: Uma Análise em Nível Estadual Usando Dados em Painel"</p>
+            <p data-lang="en" style="display: none;">"COVID-19 and the Insurance Market in Brazil: A State-Level Analysis Using Panel Data"</p>
+            <p data-lang="pt">Universidade Federal do Espírito Santo, 2023</p>
+            <p data-lang="en" style="display: none;">Federal University of Espírito Santo, 2023</p>
+          </li>
 
-            <li class="publication-item">
-              <h3 data-lang="pt">Trabalho de Conclusão de Curso</h3>
-              <h3 data-lang="en" style="display: none;">Undergraduate Thesis</h3>
-              <p data-lang="pt">"Análise Espacial da Força Policial Militar em Minas Gerais em 2017"</p>
-              <p data-lang="en" style="display: none;">"Spatial Analysis of the Military Police Force in Minas Gerais in 2017"</p>
-              <p data-lang="pt">Universidade Federal de Juiz de Fora, 2019</p>
-              <p data-lang="en" style="display: none;">Federal University of Juiz de Fora, 2019</p>
-            </li>
-          </ul>
-        </div>
+          <li class="publication-item">
+            <h3 data-lang="pt">Trabalho de Conclusão de Curso</h3>
+            <h3 data-lang="en" style="display: none;">Undergraduate Thesis</h3>
+            <p data-lang="pt">"Análise Espacial da Força Policial Militar em Minas Gerais em 2017"</p>
+            <p data-lang="en" style="display: none;">"Spatial Analysis of the Military Police Force in Minas Gerais in 2017"</p>
+            <p data-lang="pt">Universidade Federal de Juiz de Fora, 2019</p>
+            <p data-lang="en" style="display: none;">Federal University of Juiz de Fora, 2019</p>
+          </li>
+        </ul>
+      </div>
 
-        <!-- CONFERÊNCIAS -->
-        <div class="publication-category">
-          <h2 data-lang="pt">Apresentações em Conferências</h2>
-          <h2 data-lang="en" style="display: none;">Conference Presentations</h2>
-          <ul>
-            <li class="publication-item">
-              <h3 data-lang="pt">XVIII ENABER - Encontro Nacional da Associação Brasileira de Estudos Regionais e Urbanos</h3>
-              <h3 data-lang="en" style="display: none;">XVIII ENABER - National Meeting of the Brazilian Association of Regional and Urban Studies</h3>
-              <p data-lang="pt">"Análise Espacial da Força Policial Militar em Minas Gerais em 2017"</p>
-              <p data-lang="en" style="display: none;">"Spatial Analysis of the Military Police Force in Minas Gerais in 2017"</p>
-              <p>2020</p>
-            </li>
+      <!-- CONFERÊNCIAS -->
+      <div>
+        <h2 data-lang="pt">Apresentações em Conferências</h2>
+        <h2 data-lang="en" style="display: none;">Conference Presentations</h2>
+        <ul>
+          <li class="publication-item">
+            <h3 data-lang="pt">XVIII ENABER</h3>
+            <h3 data-lang="en" style="display: none;">XVIII ENABER</h3>
+            <p data-lang="pt">"Análise Espacial da Força Policial Militar em Minas Gerais em 2017"</p>
+            <p data-lang="en" style="display: none;">"Spatial Analysis of the Military Police Force in Minas Gerais in 2017"</p>
+            <p>2020</p>
+          </li>
+          <li class="publication-item">
+            <h3 data-lang="pt">ANPEC - 48º Encontro</h3>
+            <h3 data-lang="en" style="display: none;">ANPEC - 48th Meeting</h3>
+            <p data-lang="pt">Apresentação de estudo</p>
+            <p data-lang="en" style="display: none;">Study presentation</p>
+            <p>2020</p>
+          </li>
+        </ul>
+      </div>
 
-            <li class="publication-item">
-              <h3 data-lang="pt">ANPEC - 48º Encontro Nacional de Economia</h3>
-              <h3 data-lang="en" style="display: none;">ANPEC - 48th National Economics Meeting</h3>
-              <p data-lang="pt">Apresentação de estudo</p>
-              <p data-lang="en" style="display: none;">Study presentation</p>
-              <p>2020</p>
-            </li>
-          </ul>
-        </div>
-
-        <!-- OUTRAS -->
-        <div class="publication-category">
-          <h2 data-lang="pt">Outras Participações</h2>
-          <h2 data-lang="en" style="display: none;">Other Participations</h2>
-          <ul>
-            <li class="publication-item">
-              <p data-lang="pt">II Congresso sobre Diversidade Sexual e de Gênero, 2016</p>
-              <p data-lang="en" style="display: none;">II Congress on Sexual and Gender Diversity, 2016</p>
-            </li>
-            <li class="publication-item">
-              <p data-lang="pt">14ª Semana Empresarial da Campe Consultoria, 2016</p>
-              <p data-lang="en" style="display: none;">14th Business Week of Campe Consultoria, 2016</p>
-            </li>
-            <li class="publication-item">
-              <p data-lang="pt">13ª Semana Empresarial da Campe Consultoria, "Recalculando Rotas", 2015</p>
-              <p data-lang="en" style="display: none;">13th Business Week of Campe Consultoria, "Recalculating Routes", 2015</p>
-            </li>
-            <li class="publication-item">
-              <p data-lang="pt">XL Encontro Nacional dos Estudantes de Economia em Fortaleza, 2014</p>
-              <p data-lang="en" style="display: none;">XL National Meeting of Economics Students in Fortaleza, 2014</p>
-            </li>
-          </ul>
-        </div>
+      <!-- OUTRAS -->
+      <div>
+        <h2 data-lang="pt">Outras Participações</h2>
+        <h2 data-lang="en" style="display: none;">Other Participations</h2>
+        <ul>
+          <li class="publication-item"><p data-lang="pt">II Congresso sobre Diversidade Sexual e de Gênero, 2016</p><p data-lang="en" style="display: none;">II Congress on Sexual and Gender Diversity, 2016</p></li>
+          <li class="publication-item"><p data-lang="pt">14ª Semana Empresarial da Campe Consultoria, 2016</p><p data-lang="en" style="display: none;">14th Business Week of Campe Consultoria, 2016</p></li>
+          <li class="publication-item"><p data-lang="pt">13ª Semana Empresarial da Campe Consultoria, "Recalculando Rotas", 2015</p><p data-lang="en" style="display: none;">13th Business Week of Campe Consultoria, "Recalculating Routes", 2015</p></li>
+          <li class="publication-item"><p data-lang="pt">XL Encontro Nacional dos Estudantes de Economia em Fortaleza, 2014</p><p data-lang="en" style="display: none;">XL National Meeting of Economics Students in Fortaleza, 2014</p></li>
+        </ul>
       </div>
     </section>
   </main>
 
+  <!-- Rodapé -->
   <footer>
-    <div class="container">
-      <p data-lang="pt">&copy; 2025 César Malaguti. Todos os direitos reservados.</p>
-      <p data-lang="en" style="display: none;">&copy; 2025 César Malaguti. All rights reserved.</p>
-    </div>
+    <p data-lang="pt">&copy; 2025 César Malaguti. Todos os direitos reservados.</p>
+    <p data-lang="en" style="display: none;">&copy; 2025 César Malaguti. All rights reserved.</p>
   </footer>
 
+  <!-- Script de troca de idioma -->
   <script>
     function setLanguage(lang) {
       localStorage.setItem("language", lang);
@@ -172,11 +217,13 @@
       document.querySelectorAll("[data-lang]").forEach((el) => {
         el.style.display = el.getAttribute("data-lang") === lang ? "" : "none";
       });
+      document.documentElement.lang = lang;
     }
 
     document.addEventListener("DOMContentLoaded", updateLanguage);
   </script>
 </body>
 </html>
+
 
 
