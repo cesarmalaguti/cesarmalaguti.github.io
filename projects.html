@@ -31,9 +31,10 @@
       <div class="container">
         <h1 class="editable" data-lang="pt">Projetos</h1>
         <h1 class="editable" data-lang="en" style="display:none;">Projects</h1>
-
-        <!-- Aqui serão inseridos os projetos da API -->
-        <div id="projects-container"></div>
+        
+        <div id="project-list">
+          <p>Carregando projetos...</p>
+        </div>
       </div>
     </section>
   </main>
@@ -45,43 +46,35 @@
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
-  <script src="js/language.js"></script>
-  <script src="js/admin.js"></script>
-
-  <!-- Script para carregar os projetos da API -->
   <script>
-    async function loadProjects() {
-      const container = document.getElementById("projects-container");
-      container.innerHTML = "<p>Carregando projetos...</p>";
+    const API_URL = "https://cesarmalaguti-site-backend.onrender.com";
+    const projectList = document.getElementById("project-list");
 
-      try {
-        const res = await fetch("https://cesarmalaguti-site-backend.onrender.com/projects");
-        const data = await res.json();
-
+    fetch(`${API_URL}/projects`)
+      .then((res) => res.json())
+      .then((data) => {
         if (data.length === 0) {
-          container.innerHTML = "<p>Nenhum projeto encontrado.</p>";
+          projectList.innerHTML = "<p>Nenhum projeto cadastrado ainda.</p>";
           return;
         }
 
-        container.innerHTML = "";
-
-        data.forEach((project) => {
-          const item = document.createElement("div");
-          item.className = "project-item";
-          item.innerHTML = `
+        const html = data.map((project) => `
+          <div class="project-item">
             <h2>${project.name}</h2>
-          `;
-          container.appendChild(item);
-        });
-      } catch (error) {
-        container.innerHTML = "<p>Erro ao carregar projetos.</p>";
-        console.error(error);
-      }
-    }
+          </div>
+        `).join("");
 
-    loadProjects();
+        projectList.innerHTML = html;
+      })
+      .catch((err) => {
+        projectList.innerHTML = "<p>Erro ao carregar projetos.</p>";
+        console.error(err);
+      });
   </script>
+
+  <script src="js/script.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/admin.js"></script>
 </body>
 </html>
 
