@@ -1,151 +1,154 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Publicações | César Malaguti</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/admin.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Merriweather', serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicações | César Malaguti</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+        }
 
-    .lang-switch {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      display: flex;
-      gap: 8px;
-    }
+        .lang-switch {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 8px;
+        }
 
-    .lang-switch img {
-      width: 30px;
-      height: 20px;
-      cursor: pointer;
-    }
+        .lang-switch img {
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
 
-    .publications-section {
-      padding: 40px 20px;
-    }
+        .publications-section {
+            padding: 40px 20px;
+        }
 
-    .publications-section h1 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+        .publications-section h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-    .publications-list {
-      max-width: 800px;
-      margin: 0 auto;
-      list-style-type: none;
-      padding: 0;
-    }
+        .publications-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-    .publications-item {
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-  </style>
+        .publications-list li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
-  <header>
+<header>
     <div class="container">
-      <div class="logo">
-        <a href="index.html">César Malaguti</a>
-      </div>
-      <nav>
-        <ul>
-          <li>
-            <a href="index.html">
-              <span data-lang="pt">Sobre</span>
-              <span data-lang="en" style="display: none;">About</span>
-            </a>
-          </li>
-          <li>
-            <a href="publications.html" class="active">
-              <span data-lang="pt">Publicações</span>
-              <span data-lang="en" style="display: none;">Publications</span>
-            </a>
-          </li>
-          <li>
-            <a href="experience.html">
-              <span data-lang="pt">Experiência</span>
-              <span data-lang="en" style="display: none;">Experience</span>
-            </a>
-          </li>
-          <li>
-            <a href="education.html">
-              <span data-lang="pt">Formação</span>
-              <span data-lang="en" style="display: none;">Education</span>
-            </a>
-          </li>
-          <li>
-            <a href="contact.html">
-              <span data-lang="pt">Contato</span>
-              <span data-lang="en" style="display: none;">Contact</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+        <div class="logo">
+            <a href="index.html">César Malaguti</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><span data-lang="pt">Sobre</span><span data-lang="en" style="display:none;">About</span></a></li>
+                <li><a href="publications.html" class="active"><span data-lang="pt">Publicações</span><span data-lang="en" style="display:none;">Publications</span></a></li>
+                <li><a href="experience.html"><span data-lang="pt">Experiência</span><span data-lang="en" style="display:none;">Experience</span></a></li>
+                <li><a href="education.html"><span data-lang="pt">Formação</span><span data-lang="en" style="display:none;">Education</span></a></li>
+                <li><a href="contact.html"><span data-lang="pt">Contato</span><span data-lang="en" style="display:none;">Contact</span></a></li>
+            </ul>
+        </nav>
     </div>
     <div class="lang-switch">
-      <img src="imagens/images.br.svg" alt="Português" onclick="switchLanguage('pt')" />
-      <img src="imagens/images.uk.svg" alt="English" onclick="switchLanguage('en')" />
+        <img src="imagens/images.br.svg" alt="Português" onclick="switchLanguage('pt')">
+        <img src="imagens/images.uk.svg" alt="English" onclick="switchLanguage('en')">
     </div>
-  </header>
+</header>
 
-  <main>
+<main>
     <section class="publications-section">
-      <div class="container">
-        <h1 data-lang="pt">Publicações</h1>
-        <h1 data-lang="en" style="display: none;">Publications</h1>
-        <ul class="publications-list" id="publications-list">
-          <!-- Publicações serão carregadas aqui -->
-        </ul>
-      </div>
+        <div class="container">
+            <h1 data-lang="pt">Publicações</h1>
+            <h1 data-lang="en" style="display: none;">Publications</h1>
+            <ul class="publications-list">
+
+                <!-- Publicações -->
+                <li data-lang="pt">Malaguti, C. (2023). Título do artigo em português. <em>Revista Brasileira de Economia</em>.</li>
+                <li data-lang="en" style="display: none;">Malaguti, C. (2023). Article title in English. <em>Brazilian Journal of Economics</em>.</li>
+
+                <li data-lang="pt">Malaguti, C. (2022). Outro artigo relevante. <em>Revista de Políticas Públicas</em>.</li>
+                <li data-lang="en" style="display: none;">Malaguti, C. (2022). Another relevant article. <em>Journal of Public Policy</em>.</li>
+
+                <!-- Teses e Dissertações -->
+                <li data-lang="pt"><strong>📝 Teses e Dissertações</strong></li>
+                <li data-lang="en" style="display: none;"><strong>📝 Theses and Dissertations</strong></li>
+
+                <li data-lang="pt"><strong>Tese de Doutorado (em andamento)</strong><br>"Uma Análise dos Programas Qualis-APS, PGAQ e Mais Médicos como Políticas Públicas no Espírito Santo"<br>Universidade Federal do Espírito Santo, 2023-atual</li>
+                <li data-lang="en" style="display: none;"><strong>PhD Thesis (in progress)</strong><br>"An Analysis of the Qualis-APS, PGAQ, and Mais Médicos Programs as Public Policies in Espírito Santo"<br>Federal University of Espírito Santo, 2023–present</li>
+
+                <li data-lang="pt"><strong>Dissertação de Mestrado</strong><br>"COVID-19 e o Mercado de Seguros no Brasil: Uma Análise em Nível Estadual Usando Dados em Painel"<br>Universidade Federal do Espírito Santo, 2023</li>
+                <li data-lang="en" style="display: none;"><strong>Master's Dissertation</strong><br>"COVID-19 and the Insurance Market in Brazil: A State-Level Panel Data Analysis"<br>Federal University of Espírito Santo, 2023</li>
+
+                <li data-lang="pt"><strong>Trabalho de Conclusão de Curso</strong><br>"Análise Espacial da Força Policial Militar em Minas Gerais em 2017"<br>Universidade Federal de Juiz de Fora, 2019</li>
+                <li data-lang="en" style="display: none;"><strong>Undergraduate Thesis</strong><br>"Spatial Analysis of the Military Police Force in Minas Gerais in 2017"<br>Federal University of Juiz de Fora, 2019</li>
+
+                <!-- Conferências -->
+                <li data-lang="pt"><strong>🎤 Apresentações em Conferências</strong></li>
+                <li data-lang="en" style="display: none;"><strong>🎤 Conference Presentations</strong></li>
+
+                <li data-lang="pt"><strong>XVIII ENABER - Encontro Nacional da Associação Brasileira de Estudos Regionais e Urbanos</strong><br>"Análise Espacial da Força Policial Militar em Minas Gerais em 2017"<br>2020</li>
+                <li data-lang="en" style="display: none;"><strong>XVIII ENABER - Brazilian Regional and Urban Studies Association</strong><br>"Spatial Analysis of the Military Police Force in Minas Gerais in 2017"<br>2020</li>
+
+                <li data-lang="pt"><strong>ANPEC - 48º Encontro Nacional de Economia</strong><br>Apresentação de estudo<br>2020</li>
+                <li data-lang="en" style="display: none;"><strong>ANPEC - 48th National Economics Meeting</strong><br>Research presentation<br>2020</li>
+
+                <!-- Outras Participações -->
+                <li data-lang="pt"><strong>📚 Outras Participações</strong></li>
+                <li data-lang="en" style="display: none;"><strong>📚 Other Participation</strong></li>
+
+                <li data-lang="pt">II Congresso sobre Diversidade Sexual e de Gênero, 2016</li>
+                <li data-lang="en" style="display: none;">2nd Congress on Sexual and Gender Diversity, 2016</li>
+
+                <li data-lang="pt">14ª Semana Empresarial da Campe Consultoria, 2016</li>
+                <li data-lang="en" style="display: none;">14th Business Week - Campe Consultoria, 2016</li>
+
+                <li data-lang="pt">13ª Semana Empresarial da Campe Consultoria, "Recalculando Rotas", 2015</li>
+                <li data-lang="en" style="display: none;">13th Business Week - Campe Consultoria, "Recalculating Routes", 2015</li>
+
+                <li data-lang="pt">XL Encontro Nacional dos Estudantes de Economia em Fortaleza, 2014</li>
+                <li data-lang="en" style="display: none;">40th National Meeting of Economics Students in Fortaleza, 2014</li>
+
+            </ul>
+        </div>
     </section>
-  </main>
+</main>
 
-  <footer>
+<footer>
     <div class="container">
-      <p data-lang="pt">&copy; 2025 César Malaguti. Todos os direitos reservados.</p>
-      <p data-lang="en" style="display: none;">&copy; 2025 César Malaguti. All rights reserved.</p>
+        <p data-lang="pt">&copy; 2025 César Malaguti. Todos os direitos reservados.</p>
+        <p data-lang="en" style="display: none;">&copy; 2025 César Malaguti. All rights reserved.</p>
     </div>
-  </footer>
+</footer>
 
-  <script>
+<script>
     function switchLanguage(lang) {
-      const elements = document.querySelectorAll('[data-lang]');
-      elements.forEach(el => {
-        el.style.display = el.getAttribute('data-lang') === lang ? 'inline' : 'none';
-      });
-      localStorage.setItem('preferredLanguage', lang);
-      loadPublications(lang);
-    }
-
-    async function loadPublications(lang) {
-      const response = await fetch('data/publications.json');
-      const data = await response.json();
-      const list = document.getElementById('publications-list');
-      list.innerHTML = '';
-
-      data.forEach(pub => {
-        const li = document.createElement('li');
-        li.className = 'publications-item';
-        li.textContent = pub[lang];
-        list.appendChild(li);
-      });
+        const elements = document.querySelectorAll('[data-lang]');
+        elements.forEach(el => {
+            el.style.display = el.getAttribute('data-lang') === lang ? 'inline' : 'none';
+        });
+        localStorage.setItem('preferredLanguage', lang);
     }
 
     window.onload = () => {
-      const savedLang = localStorage.getItem('preferredLanguage') || 'pt';
-      switchLanguage(savedLang);
+        const savedLang = localStorage.getItem('preferredLanguage') || 'pt';
+        switchLanguage(savedLang);
     };
-  </script>
+</script>
 </body>
 </html>
-
 
 
 
