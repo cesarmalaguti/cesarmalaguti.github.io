@@ -1,166 +1,150 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Formação | César Malaguti</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Merriweather', serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formação | César Malaguti</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+        }
 
-    .lang-switch {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      display: flex;
-      gap: 8px;
-    }
+        .lang-switch {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 8px;
+        }
 
-    .lang-switch img {
-      width: 30px;
-      height: 20px;
-      cursor: pointer;
-    }
+        .lang-switch img {
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
 
-    .education-section {
-      padding: 40px 20px;
-    }
+        .education-section {
+            padding: 40px 20px;
+        }
 
-    .education-section h1 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+        .education-section h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-    .education-item {
-      background: #f9f9f9;
-      border-radius: 10px;
-      padding: 20px;
-      margin: 0 auto 20px auto;
-      max-width: 800px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-    }
+        .education-item {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+        }
 
-    .education-item h2 {
-      margin: 0 0 5px 0;
-      font-size: 20px;
-    }
+        .education-item h2 {
+            margin-bottom: 5px;
+        }
 
-    .education-item p {
-      margin: 0;
-      font-size: 15px;
-    }
+        .education-item .institution {
+            font-weight: bold;
+        }
 
-    .education-item .institution {
-      font-weight: bold;
-      margin-top: 5px;
-    }
-
-    .education-item .period {
-      font-style: italic;
-      color: #555;
-      margin-top: 2px;
-    }
-  </style>
+        .education-item .period {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
 <header>
-  <div class="container">
-    <div class="logo">
-      <a href="index.html">César Malaguti</a>
+    <div class="container">
+        <div class="logo">
+            <a href="index.html">César Malaguti</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><span data-lang="pt">Sobre</span><span data-lang="en" style="display:none;">About</span></a></li>
+                <li><a href="publications.html"><span data-lang="pt">Publicações</span><span data-lang="en" style="display:none;">Publications</span></a></li>
+                <li><a href="projects.html"><span data-lang="pt">Projetos</span><span data-lang="en" style="display:none;">Projects</span></a></li>
+                <li><a href="experience.html"><span data-lang="pt">Experiência</span><span data-lang="en" style="display:none;">Experience</span></a></li>
+                <li><a href="education.html" class="active"><span data-lang="pt">Formação</span><span data-lang="en" style="display:none;">Education</span></a></li>
+                <li><a href="contact.html"><span data-lang="pt">Contato</span><span data-lang="en" style="display:none;">Contact</span></a></li>
+            </ul>
+        </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html"><span data-lang="pt">Sobre</span><span data-lang="en" style="display: none;">About</span></a></li>
-        <li><a href="publications.html"><span data-lang="pt">Publicações</span><span data-lang="en" style="display: none;">Publications</span></a></li>
-        <li><a href="projects.html"><span data-lang="pt">Projetos</span><span data-lang="en" style="display: none;">Projects</span></a></li>
-        <li><a href="experience.html"><span data-lang="pt">Experiência</span><span data-lang="en" style="display: none;">Experience</span></a></li>
-        <li><a href="education.html" class="active"><span data-lang="pt">Formação</span><span data-lang="en" style="display: none;">Education</span></a></li>
-        <li><a href="contact.html"><span data-lang="pt">Contato</span><span data-lang="en" style="display: none;">Contact</span></a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="lang-switch">
-    <img src="imagens/images.br.svg" alt="Português" onclick="switchLanguage('pt')" />
-    <img src="imagens/images.uk.svg" alt="English" onclick="switchLanguage('en')" />
-  </div>
+    <div class="lang-switch">
+        <img src="imagens/images.br.svg" alt="Português" onclick="switchLanguage('pt')">
+        <img src="imagens/images.uk.svg" alt="English" onclick="switchLanguage('en')">
+    </div>
 </header>
 
 <main>
-  <section class="education-section">
-    <div class="container">
-      <h1 data-lang="pt">Formação Acadêmica</h1>
-      <h1 data-lang="en" style="display: none;">Education</h1>
+    <section class="education-section">
+        <div class="container">
+            <h1 data-lang="pt">Formação Acadêmica</h1>
+            <h1 data-lang="en" style="display: none;">Academic Background</h1>
 
-      <div class="education-item">
-        <h2>PhD em Economia</h2>
-        <p class="institution">Universidade Federal do Espírito Santo (UFES)</p>
-        <p class="period">2022 - Atual</p>
-      </div>
+            <div class="education-item">
+                <h2 data-lang="pt">PhD em Economia</h2>
+                <h2 data-lang="en" style="display: none;">PhD in Economics</h2>
+                <p class="institution" data-lang="pt">Universidade Federal do Espírito Santo (UFES)</p>
+                <p class="institution" data-lang="en" style="display: none;">Federal University of Espírito Santo (UFES)</p>
+                <p class="period" data-lang="pt">2021 - Atual</p>
+                <p class="period" data-lang="en" style="display: none;">2021 - Present</p>
+            </div>
 
-      <div class="education-item">
-        <h2>Visiting PhD Student</h2>
-        <p class="institution">Institute of Global Health Innovation, Imperial College London</p>
-        <p class="period">2025</p>
-      </div>
+            <div class="education-item">
+                <h2 data-lang="pt">Mestrado em Economia</h2>
+                <h2 data-lang="en" style="display: none;">Master’s in Economics</h2>
+                <p class="institution" data-lang="pt">Universidade Federal do Espírito Santo (UFES)</p>
+                <p class="institution" data-lang="en" style="display: none;">Federal University of Espírito Santo (UFES)</p>
+                <p class="period" data-lang="pt">2019 - 2021</p>
+                <p class="period" data-lang="en" style="display: none;">2019 - 2021</p>
+            </div>
 
-      <div class="education-item">
-        <h2>Mestrado Profissional em Políticas Públicas e Desenvolvimento</h2>
-        <p class="institution">IPEA/Enap</p>
-        <p class="period">2023 - Atual</p>
-      </div>
+            <div class="education-item">
+                <h2 data-lang="pt">Graduação em Ciências Econômicas</h2>
+                <h2 data-lang="en" style="display: none;">Bachelor's Degree in Economics</h2>
+                <p class="institution" data-lang="pt">Universidade Federal do Espírito Santo (UFES)</p>
+                <p class="institution" data-lang="en" style="display: none;">Federal University of Espírito Santo (UFES)</p>
+                <p class="period" data-lang="pt">2014 - 2018</p>
+                <p class="period" data-lang="en" style="display: none;">2014 - 2018</p>
+            </div>
 
-      <div class="education-item">
-        <h2>Mestrado em Economia</h2>
-        <p class="institution">Universidade Federal do Espírito Santo (UFES)</p>
-        <p class="period">2020 - 2022</p>
-      </div>
+            <div class="education-item">
+                <h2 data-lang="pt">Intercâmbio Acadêmico em Economia</h2>
+                <h2 data-lang="en" style="display: none;">Academic Exchange in Economics</h2>
+                <p class="institution" data-lang="pt">Universidade Federal do Rio de Janeiro (UFRJ)</p>
+                <p class="institution" data-lang="en" style="display: none;">Federal University of Rio de Janeiro (UFRJ)</p>
+                <p class="period" data-lang="pt">2017</p>
+                <p class="period" data-lang="en" style="display: none;">2017</p>
+            </div>
 
-      <div class="education-item">
-        <h2>MBA em Gestão Financeira</h2>
-        <p class="institution">Fundação Getúlio Vargas (FGV)</p>
-        <p class="period">2018 - 2020</p>
-      </div>
-
-      <div class="education-item">
-        <h2>Graduação em Ciências Econômicas</h2>
-        <p class="institution">Universidade Federal de Juiz de Fora (UFJF)</p>
-        <p class="period">2010 - 2014</p>
-      </div>
-
-      <div class="education-item">
-        <h2>Intercâmbio Acadêmico em Economia</h2>
-        <p class="institution">Universidade Federal do Rio de Janeiro (UFRJ)</p>
-        <p class="period">2013</p>
-      </div>
-
-    </div>
-  </section>
+        </div>
+    </section>
 </main>
 
 <footer>
-  <div class="container">
-    <p data-lang="pt">&copy; 2025 César Malaguti. Todos os direitos reservados.</p>
-    <p data-lang="en" style="display: none;">&copy; 2025 César Malaguti. All rights reserved.</p>
-  </div>
+    <div class="container">
+        <p data-lang="pt">&copy; 2025 César Malaguti. Todos os direitos reservados.</p>
+        <p data-lang="en" style="display: none;">&copy; 2025 César Malaguti. All rights reserved.</p>
+    </div>
 </footer>
 
 <script>
-  function switchLanguage(lang) {
-    const elements = document.querySelectorAll('[data-lang]');
-    elements.forEach(el => {
-      el.style.display = el.getAttribute('data-lang') === lang ? 'inline' : 'none';
-    });
-    localStorage.setItem('preferredLanguage', lang);
-  }
+    function switchLanguage(lang) {
+        const elements = document.querySelectorAll('[data-lang]');
+        elements.forEach(el => {
+            el.style.display = el.getAttribute('data-lang') === lang ? 'inline' : 'none';
+        });
+        localStorage.setItem('preferredLanguage', lang);
+    }
 
-  window.onload = () => {
-    const savedLang = localStorage.getItem('preferredLanguage') || 'pt';
-    switchLanguage(savedLang);
-  };
+    window.onload = () => {
+        const savedLang = localStorage.getItem('preferredLanguage') || 'pt';
+        switchLanguage(savedLang);
+    };
 </script>
 </body>
 </html>
+
 
