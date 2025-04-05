@@ -1,67 +1,134 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>César Malaguti | Economista</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/admin.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>César Malaguti | Economista</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 1rem;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    nav ul li a.active {
+      color: #007acc;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+    .profile-image img {
+      width: 160px;
+      border-radius: 50%;
+      margin-right: 2rem;
+    }
+    .hero-content h1 {
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+    .about p {
+      margin-bottom: 1rem;
+    }
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      padding: 1rem;
+      background-color: #f8f8f8;
+      font-size: 0.9rem;
+      border-top: 1px solid #ddd;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .profile-image img {
+        margin-bottom: 1rem;
+        margin-right: 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">César Malaguti</a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Sobre</a></li>
-                    <li><a href="publications.html">Publicações</a></li>
-                    <li><a href="projects.html">Projetos</a></li>
-                    <li><a href="experience.html">Experiência</a></li>
-                    <li><a href="education.html">Formação</a></li>
-                    <li><a href="contact.html">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html" style="font-size: 1.3rem; font-weight: bold;">César Malaguti</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Sobre</a></li>
+          <li><a href="publications.html">Publicações</a></li>
+          <li><a href="projects.html">Projetos</a></li>
+          <li><a href="experience.html">Experiência</a></li>
+          <li><a href="education.html">Formação</a></li>
+          <li><a href="contact.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <div class="profile-image">
-                    <img src="images/profile.jpg" alt="César Malaguti" class="profile-img">
-                </div>
-                <div class="hero-content">
-                    <h1 data-lang="pt">Sou César Malaguti e trabalho com economia aplicada e políticas públicas.</h1>
-                    <h1 data-lang="en" style="display: none;">I am César Malaguti and I work with applied economics and public policies.</h1>
-                </div>
-            </div>
-        </section>
+  <main>
+    <section class="hero container">
+      <div class="profile-image">
+        <img src="images/profile.jpg" alt="César Malaguti" />
+      </div>
+      <div class="hero-content">
+        <h1 data-lang="pt">Sou César Malaguti e trabalho com economia aplicada e políticas públicas.</h1>
+        <h1 data-lang="en" style="display: none;">I am César Malaguti and I work with applied economics and public policies.</h1>
+      </div>
+    </section>
 
-        <section class="about">
-            <div class="container">
-                <p data-lang="pt">Desde abril de 2024, atuo como Coordenador de Políticas Públicas no Laboratório de Pesquisa e Inovação em Saúde Ocupacional e Segurança no Serviço Público Estadual (Lab Rede Qualivida). Anteriormente, de 2022 a 2023, fui Cientista de Dados na Gestão e Estudos de Gestão e Recursos Humanos (GEDAD/SEGER), e de 2021 a 2022, atuei como Analista de Projetos de Inovação em Políticas Públicas no Instituto Capixaba de Ensino, Pesquisa e Inovação em Saúde (ICEPI).</p>
-                <p data-lang="en" style="display: none;">Since April 2024, I have been working as a Public Policy Coordinator at the Laboratory for Research and Innovation in Occupational Health and Safety in the State Public Service (Lab Rede Qualivida). Previously, from 2022 to 2023, I was a Data Scientist in Management and Studies of Management and Human Resources (GEDAD/SEGER), and from 2021 to 2022, I worked as an Analyst of Innovation Projects in Public Policies at the Capixaba Institute of Education, Research and Innovation in Health (ICEPI).</p>
+    <section class="about container">
+      <p data-lang="pt">Desde abril de 2024, atuo como Coordenador de Políticas Públicas no Laboratório de Pesquisa e Inovação em Saúde Ocupacional e Segurança no Serviço Público Estadual (Lab Rede Qualivida). Anteriormente, de 2022 a 2023, fui Cientista de Dados na Gestão e Estudos de Gestão e Recursos Humanos (GEDAD/SEGER), e de 2021 a 2022, atuei como Analista de Projetos de Inovação em Políticas Públicas no Instituto Capixaba de Ensino, Pesquisa e Inovação em Saúde (ICEPI).</p>
+      <p data-lang="en" style="display: none;">Since April 2024, I have been working as a Public Policy Coordinator at the Laboratory for Research and Innovation in Occupational Health and Safety in the State Public Service (Lab Rede Qualivida). Previously, from 2022 to 2023, I was a Data Scientist in Management and Studies of Management and Human Resources (GEDAD/SEGER), and from 2021 to 2022, I worked as an Analyst of Innovation Projects in Public Policies at the Capixaba Institute of Education, Research and Innovation in Health (ICEPI).</p>
 
-                <p data-lang="pt">Meus interesses de pesquisa incluem economia aplicada, políticas públicas, análise de dados e métodos quantitativos. Atualmente, meu foco está na análise de programas de saúde pública como políticas públicas, incluindo os programas Qualis-APS, PGAQ e Mais Médicos no Espírito Santo.</p>
-                <p data-lang="en" style="display: none;">My research interests include applied economics, public policies, data analysis, and quantitative methods. Currently, my focus is on the analysis of public health programs as public policies, including the Qualis-APS, PGAQ, and Mais Médicos programs in Espírito Santo.</p>
+      <p data-lang="pt">Meus interesses de pesquisa incluem economia aplicada, políticas públicas, análise de dados e métodos quantitativos. Atualmente, meu foco está na análise de programas de saúde pública como políticas públicas, incluindo os programas Qualis-APS, PGAQ e Mais Médicos no Espírito Santo.</p>
+      <p data-lang="en" style="display: none;">My research interests include applied economics, public policies, data analysis, and quantitative methods. Currently, my focus is on the analysis of public health programs as public policies, including the Qualis-APS, PGAQ, and Mais Médicos programs in Espírito Santo.</p>
 
-                <p data-lang="pt">Sou doutorando em Economia Aplicada pelo Centro de Ciências Jurídicas e Econômicas da Universidade Federal do Espírito Santo (PPGEco/UFES), Mestre em Economia Aplicada pela mesma instituição (2023) e Bacharel em Economia pela Universidade Federal de Juiz de Fora (2019). Durante minha graduação, fui presidente da Empresa Júnior TriVallis Consultoria na Universidade Federal de Juiz de Fora (2014-2017).</p>
-                <p data-lang="en" style="display: none;">I am a PhD candidate in Applied Economics at the Center for Legal and Economic Sciences of the Federal University of Espírito Santo (PPGEco/UFES), Master in Applied Economics from the same institution (2023), and Bachelor in Economics from the Federal University of Juiz de Fora (2019). During my undergraduate studies, I was president of the Junior Enterprise TriVallis Consultoria at the Federal University of Juiz de Fora (2014-2017).</p>
-            </div>
-        </section>
-    </main>
+      <p data-lang="pt">Sou doutorando em Economia Aplicada pelo Centro de Ciências Jurídicas e Econômicas da Universidade Federal do Espírito Santo (PPGEco/UFES), Mestre em Economia Aplicada pela mesma instituição (2023) e Bacharel em Economia pela Universidade Federal de Juiz de Fora (2019). Durante minha graduação, fui presidente da Empresa Júnior TriVallis Consultoria na Universidade Federal de Juiz de Fora (2014-2017).</p>
+      <p data-lang="en" style="display: none;">I am a PhD candidate in Applied Economics at the Center for Legal and Economic Sciences of the Federal University of Espírito Santo (PPGEco/UFES), Master in Applied Economics from the same institution (2023), and Bachelor in Economics from the Federal University of Juiz de Fora (2019). During my undergraduate studies, I was president of the Junior Enterprise TriVallis Consultoria at the Federal University of Juiz de Fora (2014-2017).</p>
+    </section>
+  </main>
 
-    <footer>
-        <div class="container">
-            <p data-lang="pt">&copy; 2025 César Malaguti. Todos os direitos reservados.</p>
-            <p data-lang="en" style="display: none;">&copy; 2025 César Malaguti. All rights reserved.</p>
-        </div>
-    </footer>
+  <footer>
+    <div class="container">
+      <p data-lang="pt">&copy; 2025 César Malaguti. Todos os direitos reservados.</p>
+      <p data-lang="en" style="display: none;">&copy; 2025 César Malaguti. All rights reserved.</p>
+    </div>
+  </footer>
 
-    <script src="js/script.js"></script>
-    <script src="js/language.js"></script>
-    <script src="js/admin.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/admin.js"></script>
 </body>
 </html>
