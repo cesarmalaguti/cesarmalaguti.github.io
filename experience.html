@@ -107,12 +107,18 @@
 
 <script>
     const experiences = [
-        {
-            title_pt: "Coordenador de Política Pública Estadual na Saúde",
-            title_en: "State Public Policy Health Coordinator",
-            company: "Lab Rede Qualivida",
-            period: "agosto 2024 - Atual",
-            items_pt: [
+    {
+        title: {
+            pt: "Coordenador de Política Pública Estadual na Saúde",
+            en: "State Public Health Policy Coordinator"
+        },
+        company: "Lab Rede Qualivida",
+        period: {
+            pt: "agosto 2024 - Atual",
+            en: "August 2024 - Present"
+        },
+        tasks: {
+            pt: [
                 "Mapeamento de desafios e impactos na saúde e segurança do trabalho",
                 "Proposição de melhorias tecnológicas e procedurais",
                 "Coleta e análise de dados sobre saúde ocupacional",
@@ -122,53 +128,163 @@
                 "Alinhamento normativo e tecnológico com o governo",
                 "Avaliação de programas e políticas"
             ],
-            items_en: [
+            en: [
                 "Mapping challenges and impacts in occupational health and safety",
                 "Proposing technological and procedural improvements",
-                "Data collection and analysis on occupational health",
-                "Development of a state occupational health and safety management and monitoring system",
-                "Implementation of dashboards and analytical tools",
-                "Use of AI, machine learning, and data science",
-                "Normative and technological alignment with the government",
-                "Program and policy evaluation"
+                "Collecting and analyzing occupational health data",
+                "Developing a management and monitoring system for OSH in the state",
+                "Implementing dashboards and analysis tools",
+                "Using AI, machine learning, and data science",
+                "Regulatory and technological alignment with the government",
+                "Evaluation of programs and policies"
             ]
+        }
+    },
+    {
+        title: {
+            pt: "Cientista de Dados",
+            en: "Data Scientist"
         },
-        // Outras experiências serão adicionadas aqui da mesma forma
-    ];
-
-    function renderExperiences() {
-        const container = document.getElementById("experiences-container");
-        container.innerHTML = "";
-        experiences.forEach(exp => {
-            const div = document.createElement("div");
-            div.className = "experience-item";
-
-            div.innerHTML = `
-                <h2 data-lang="pt">${exp.title_pt}</h2>
-                <h2 data-lang="en" style="display: none;">${exp.title_en}</h2>
-                <p class="company">${exp.company}</p>
-                <p class="period">${exp.period}</p>
-                <ul>
-                    ${exp.items_pt.map(item => `<li data-lang="pt">${item}</li>`).join("\n")}
-                    ${exp.items_en.map(item => `<li data-lang="en" style="display: none;">${item}</li>`).join("\n")}
-                </ul>
-            `;
-
-            container.appendChild(div);
-        });
+        company: "Gerência de Dados e Estudos de Gestão e Recursos Humanos (GEDAD/SEGER)",
+        period: {
+            pt: "2022 - 2023",
+            en: "2022 - 2023"
+        },
+        tasks: {
+            pt: [
+                "Análise de dados de recursos humanos, gestão e de saúde do setor público estadual",
+                "Modelagem matemática, estatística e econômica na esfera pública",
+                "Desenvolvimento de indicadores e dashboards interoperacionais"
+            ],
+            en: [
+                "Data analysis of human resources, management, and public health in the state sector",
+                "Mathematical, statistical, and economic modeling in the public sphere",
+                "Development of indicators and interoperable dashboards"
+            ]
+        }
+    },
+    {
+        title: {
+            pt: "Analista de Projetos de Inovação",
+            en: "Innovation Project Analyst"
+        },
+        company: "ICEPI",
+        period: {
+            pt: "2021 - 2022",
+            en: "2021 - 2022"
+        },
+        tasks: {
+            pt: [
+                "Análise de dados do setor público e projetos de políticas públicas em saúde",
+                "Desenvolvimento de pesquisas aplicadas",
+                "Validação de indicadores e bases de dados"
+            ],
+            en: [
+                "Analysis of public sector data and public health policy projects",
+                "Development of applied research",
+                "Validation of indicators and databases"
+            ]
+        }
+    },
+    {
+        title: {
+            pt: "Presidente",
+            en: "President"
+        },
+        company: "TriVallis Consultoria",
+        period: {
+            pt: "Novembro 2014 - Junho 2017",
+            en: "November 2014 - June 2017"
+        },
+        tasks: {
+            pt: [
+                "Gestão estratégica e operacional",
+                "Relacionamento com clientes e universidade",
+                "Definição de metas e monitoramento de resultados"
+            ],
+            en: [
+                "Strategic and operational management",
+                "Client and university relationship management",
+                "Goal setting and results monitoring"
+            ]
+        }
+    },
+    {
+        title: {
+            pt: "Estágio em Docência (Doutorado)",
+            en: "Teaching Internship (PhD)"
+        },
+        company: "UFES - Departamento de Economia",
+        period: {
+            pt: "Março 2023 - Março 2024",
+            en: "March 2023 - March 2024"
+        },
+        tasks: {
+            pt: [
+                "Aulas sobre métodos quantitativos em economia",
+                "Modelos Lineares, Álgebra Matricial, Otimização",
+                "Uso de R para aplicações empíricas"
+            ],
+            en: [
+                "Lectures on quantitative methods in economics",
+                "Linear Models, Matrix Algebra, Optimization",
+                "Using R for empirical applications"
+            ]
+        }
+    },
+    {
+        title: {
+            pt: "Extensão Universitária",
+            en: "University Extension"
+        },
+        company: "APAE",
+        period: {
+            pt: "Junho 2014 - Novembro 2014",
+            en: "June 2014 - November 2014"
+        },
+        tasks: {
+            pt: [
+                "Projeto de Organização e Planejamento Sustentável",
+                "60 horas de extensão pela UFJF"
+            ],
+            en: [
+                "Sustainable Organization and Planning Project",
+                "60-hour extension course by UFJF"
+            ]
+        }
     }
+];
 
-    function switchLanguage(lang) {
-        const elements = document.querySelectorAll('[data-lang]');
-        elements.forEach(el => {
-            el.style.display = el.getAttribute('data-lang') === lang ? 'inline' : 'none';
+function renderExperiences(lang = 'pt') {
+    const container = document.getElementById('experiences-container');
+    container.innerHTML = '';
+    experiences.forEach(exp => {
+        const div = document.createElement('div');
+        div.classList.add('experience-item');
+        div.innerHTML = `
+            <h2>${exp.title[lang]}</h2>
+            <p class="company">${exp.company}</p>
+            <p class="period">${exp.period[lang]}</p>
+            <ul>
+                ${exp.tasks[lang].map(item => `<li>${item}</li>`).join('')}
+            </ul>
+        `;
+        container.appendChild(div);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'pt';
+    renderExperiences(savedLang);
+
+    document.querySelectorAll('.lang-switch img').forEach(img => {
+        img.addEventListener('click', () => {
+            const lang = img.alt === 'Português' ? 'pt' : 'en';
+            renderExperiences(lang);
         });
-        localStorage.setItem('preferredLanguage', lang);
-    }
+    });
+});
 
-    window.onload = () => {
-        const savedLang = localStorage.getItem('preferredLanguage') || 'pt';
-        renderExperiences();
         switchLanguage(savedLang);
     };
 </script>
