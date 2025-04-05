@@ -255,6 +255,11 @@
     }
 ];
 
+<script>
+const experiences = [
+    // ... (sua lista de experiências permanece igual aqui)
+];
+
 function renderExperiences(lang = 'pt') {
     const container = document.getElementById('experiences-container');
     container.innerHTML = '';
@@ -273,20 +278,26 @@ function renderExperiences(lang = 'pt') {
     });
 }
 
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.getAttribute('data-lang') === lang ? '' : 'none';
+    });
+    renderExperiences(lang);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLanguage') || 'pt';
     renderExperiences(savedLang);
+    switchLanguage(savedLang);
 
     document.querySelectorAll('.lang-switch img').forEach(img => {
         img.addEventListener('click', () => {
             const lang = img.alt === 'Português' ? 'pt' : 'en';
-            renderExperiences(lang);
+            switchLanguage(lang);
         });
     });
 });
-
-        switchLanguage(savedLang);
-    };
 </script>
 </body>
 </html>
