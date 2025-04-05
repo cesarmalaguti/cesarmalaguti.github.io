@@ -6,116 +6,186 @@
     <title>Experiência | César Malaguti</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+        }
+
+        .lang-switch {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .lang-switch img {
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .experience-section {
+            padding: 40px 20px;
+        }
+
+        .experience-section h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .experience-item {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+
+        .experience-item h2 {
+            margin-bottom: 5px;
+        }
+
+        .experience-item .company {
+            font-weight: bold;
+        }
+
+        .experience-item .period {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .experience-item ul {
+            padding-left: 20px;
+        }
+
+        .experience-item ul li {
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 <body>
-    <header>
+<header>
+    <div class="container">
+        <div class="logo">
+            <a href="index.html">César Malaguti</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><span data-lang="pt">Sobre</span><span data-lang="en" style="display: none;">About</span></a></li>
+                <li><a href="publications.html"><span data-lang="pt">Publicações</span><span data-lang="en" style="display: none;">Publications</span></a></li>
+                <li><a href="projects.html"><span data-lang="pt">Projetos</span><span data-lang="en" style="display: none;">Projects</span></a></li>
+                <li><a href="experience.html" class="active"><span data-lang="pt">Experiência</span><span data-lang="en" style="display: none;">Experience</span></a></li>
+                <li><a href="education.html"><span data-lang="pt">Formação</span><span data-lang="en" style="display: none;">Education</span></a></li>
+                <li><a href="contact.html"><span data-lang="pt">Contato</span><span data-lang="en" style="display: none;">Contact</span></a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="lang-switch">
+        <img src="imagens/images.br.svg" alt="Português" onclick="switchLanguage('pt')">
+        <img src="imagens/images.uk.svg" alt="English" onclick="switchLanguage('en')">
+    </div>
+</header>
+
+<main>
+    <section class="experience-section">
         <div class="container">
-            <div class="logo">
-                <a href="index.html">César Malaguti</a>
-            </div>
-            <nav>
+            <h1 data-lang="pt">Experiência Profissional</h1>
+            <h1 data-lang="en" style="display: none;">Professional Experience</h1>
+
+            <!-- Inserir aqui os blocos de experiência, se necessário, podemos adaptar para multi-idioma futuramente -->
+            <div class="experience-item">
+                <h2>Coordenador de Políticas Públicas</h2>
+                <p class="company">Lab Rede Qualivida</p>
+                <p class="period">Abril 2024 - Atual</p>
                 <ul>
-                    <li><a href="index.html">Sobre</a></li>
-                    <li><a href="publications.html">Publicações</a></li>
-                    <li><a href="projects.html">Projetos</a></li>
-                    <li><a href="experience.html" class="active">Experiência</a></li>
-                    <li><a href="education.html">Formação</a></li>
-                    <li><a href="contact.html">Contato</a></li>
+                    <li>Identificação de desafios em saúde ocupacional e segurança</li>
+                    <li>Proposição de melhorias tecnológicas e procedurais</li>
+                    <li>Coleta e análise de dados sobre saúde ocupacional</li>
+                    <li>Desenvolvimento de sistema de gestão e monitoramento</li>
+                    <li>Implementação de dashboards e ferramentas de análise</li>
+                    <li>Uso de IA, aprendizado de máquina e ciência de dados</li>
+                    <li>Alinhamento normativo e tecnológico com o governo</li>
+                    <li>Validação de indicadores e bases de dados</li>
                 </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section class="experience">
-            <div class="container">
-                <h1>Experiência Profissional</h1>
-                
-                <div class="experience-item">
-                    <h2>Coordenador de Políticas Públicas</h2>
-                    <p class="company">Laboratório de Pesquisa e Inovação em Saúde Ocupacional e Segurança no Serviço Público Estadual (Lab Rede Qualivida)</p>
-                    <p class="period">Abril 2024 - Atual</p>
-                    <ul>
-                        <li>Identificação de desafios em saúde ocupacional e segurança no ramo executivo estadual e a influência direta de seus mecanismos</li>
-                        <li>Abordagem de demandas sociais e proposição de melhorias tecnológicas e procedurais</li>
-                        <li>Coleta de dados atualizados sobre saúde ocupacional e segurança no ramo executivo estadual</li>
-                        <li>Desenvolvimento de sistema de gestão e monitoramento para saúde ocupacional e segurança</li>
-                        <li>Implementação de ferramentas e painéis sobre saúde ocupacional e segurança, incluindo dashboards para indicadores selecionados</li>
-                        <li>Envolvimento da equipe técnica na implementação de soluções econômicas e estatísticas, inteligência artificial, aprendizado de máquina e ciência de dados</li>
-                        <li>Alinhamento do governo estadual através de processos normativos e tecnológicos atualizados</li>
-                        <li>Produção, consolidação e validação de indicadores (KPIs) e bases de dados</li>
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <h2>Cientista de Dados</h2>
-                    <p class="company">Gestão e Estudos de Gestão e Recursos Humanos (GEDAD/SEGER)</p>
-                    <p class="period">2022 - 2023</p>
-                    <ul>
-                        <li>Análise e gestão de dados relacionados a recursos humanos do serviço público estadual</li>
-                        <li>Implementação de soluções estatísticas e econômicas para análise de dados</li>
-                        <li>Desenvolvimento de modelos de aprendizado de máquina e inteligência artificial</li>
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <h2>Analista de Projetos de Inovação em Políticas Públicas</h2>
-                    <p class="company">Instituto Capixaba de Ensino, Pesquisa e Inovação em Saúde (ICEPI)</p>
-                    <p class="period">2021 - 2022</p>
-                    <ul>
-                        <li>Análise de projetos de inovação em políticas públicas de saúde</li>
-                        <li>Desenvolvimento de pesquisas aplicadas na área de saúde pública</li>
-                        <li>Avaliação de programas e políticas de saúde</li>
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <h2>Presidente</h2>
-                    <p class="company">TriVallis Consultoria (Empresa Júnior)</p>
-                    <p class="period">Novembro 2014 - Junho 2017</p>
-                    <ul>
-                        <li>Projetou tarefas e metas, supervisionou, organizou e representou publicamente os interesses da Empresa Júnior</li>
-                        <li>Participou em eventos externos, manteve contatos com clientes e a Universidade Federal</li>
-                        <li>Definiu diretrizes para melhor alinhar as metas e objetivos da diretoria e múltiplas equipes</li>
-                        <li>Coletou, analisou e categorizou dados para tomada de decisão, visando maximizar a produtividade da empresa</li>
-                        <li>Responsável pelo monitoramento de rotinas, desenvolvimento de novas para atender necessidades emergentes</li>
-                        <li>Supervisionou projetos, interagiu nas etapas iniciais e finais dos processos e criou diversos cenários</li>
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <h2>Estágio em Docência</h2>
-                    <p class="company">Universidade Federal do Espírito Santo - Departamento de Economia</p>
-                    <p class="period">Março 2023 - Março 2024</p>
-                    <ul>
-                        <li>Atuou como assistente de ensino, ministrando aulas sobre métodos quantitativos em economia</li>
-                        <li>Conteúdos incluíram: Modelos Lineares, Álgebra Matricial e Otimização Estática e Dinâmica</li>
-                        <li>Abordou sistemas de equações lineares, operações matriciais, autovalores e autovetores</li>
-                        <li>Aplicação e uso do Modelo de Insumo-Produto de Leontief, regressões e outras aplicações usando a ferramenta estatística R</li>
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <h2>Extensão Universitária</h2>
-                    <p class="company">Associação de Pais e Amigos dos Excepcionais (APAE)</p>
-                    <p class="period">Junho 2014 - Novembro 2014</p>
-                    <ul>
-                        <li>Participou de projeto de extensão em Organização e Planejamento Sustentável na APAE de Governador Valadares</li>
-                        <li>Carga horária: 60 horas</li>
-                        <li>Universidade Federal de Juiz de Fora (UFJF), Brasil</li>
-                    </ul>
-                </div>
             </div>
-        </section>
-    </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 César Malaguti. Todos os direitos reservados.</p>
+            <div class="experience-item">
+                <h2>Cientista de Dados</h2>
+                <p class="company">GEDAD/SEGER</p>
+                <p class="period">2022 - 2023</p>
+                <ul>
+                    <li>Análise de dados de RH do setor público</li>
+                    <li>Modelagem estatística e econômica</li>
+                    <li>Desenvolvimento de soluções com IA</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h2>Analista de Projetos de Inovação</h2>
+                <p class="company">ICEPI</p>
+                <p class="period">2021 - 2022</p>
+                <ul>
+                    <li>Análise de projetos de políticas públicas em saúde</li>
+                    <li>Desenvolvimento de pesquisas aplicadas</li>
+                    <li>Avaliação de programas e políticas</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h2>Presidente</h2>
+                <p class="company">TriVallis Consultoria</p>
+                <p class="period">Novembro 2014 - Junho 2017</p>
+                <ul>
+                    <li>Gestão estratégica e operacional</li>
+                    <li>Relacionamento com clientes e universidade</li>
+                    <li>Definição de metas e monitoramento de resultados</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h2>Estágio em Docência</h2>
+                <p class="company">UFES - Departamento de Economia</p>
+                <p class="period">Março 2023 - Março 2024</p>
+                <ul>
+                    <li>Aulas sobre métodos quantitativos em economia</li>
+                    <li>Modelos Lineares, Álgebra Matricial, Otimização</li>
+                    <li>Uso de R para aplicações empíricas</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h2>Extensão Universitária</h2>
+                <p class="company">APAE</p>
+                <p class="period">Junho 2014 - Novembro 2014</p>
+                <ul>
+                    <li>Projeto de Organização e Planejamento Sustentável</li>
+                    <li>60 horas de extensão pela UFJF</li>
+                </ul>
+            </div>
+
         </div>
-    </footer>
+    </section>
+</main>
 
-    <script src="js/script.js"></script>
-    <script src="js/admin.js"></script>
+<footer>
+    <div class="container">
+        <p data-lang="pt">&copy; 2025 César Malaguti. Todos os direitos reservados.</p>
+        <p data-lang="en" style="display: none;">&copy; 2025 César Malaguti. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    function switchLanguage(lang) {
+        const elements = document.querySelectorAll('[data-lang]');
+        elements.forEach(el => {
+            el.style.display = el.getAttribute('data-lang') === lang ? 'inline' : 'none';
+        });
+        localStorage.setItem('preferredLanguage', lang);
+    }
+
+    window.onload = () => {
+        const savedLang = localStorage.getItem('preferredLanguage') || 'pt';
+        switchLanguage(savedLang);
+    };
+</script>
 </body>
 </html>
