@@ -4,67 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>César Malaguti | Economista</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/admin.css" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Lora', serif;
     }
-
-    h1, h2, h3 {
-      font-family: 'Merriweather', serif;
-    }
-
-    .lang-switcher {
+    .language-switcher {
       position: absolute;
-      top: 20px;
-      right: 30px;
-      display: flex;
-      gap: 10px;
+      top: 10px;
+      right: 20px;
     }
-
-    .lang-switcher img {
-      width: 25px;
-      height: auto;
+    .language-switcher img {
+      width: 32px;
+      height: 22px;
+      margin-left: 10px;
       cursor: pointer;
     }
-
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      text-align: center;
-      flex-wrap: wrap;
-    }
-
     .profile-image img {
       width: 180px;
       height: 180px;
-      border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #ccc;
-      margin-bottom: 20px;
+      border-radius: 50%;
+      border: 3px solid #ccc;
     }
-
-    .hero-content h1 {
-      font-size: 1.5em;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px 0;
+    header {
+      position: relative;
     }
   </style>
 </head>
-
 <body>
   <header>
     <div class="container">
@@ -81,21 +50,23 @@
           <li><a href="contact.html">Contato</a></li>
         </ul>
       </nav>
-    </div>
-    <div class="lang-switcher">
-      <img src="imagens/br.svg" alt="Português" onclick="setLanguage('pt')">
-      <img src="imagens/uk.svg" alt="English" onclick="setLanguage('en')">
+      <div class="language-switcher">
+        <img src="imagens/images.br.svg" alt="Português" onclick="setLanguage('pt')" />
+        <img src="imagens/images.uk.svg" alt="English" onclick="setLanguage('en')" />
+      </div>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="profile-image">
-        <img src="imagens/profile.jpg" alt="César Malaguti">
-      </div>
-      <div class="hero-content">
-        <h1 data-lang="pt">Sou César Malaguti e trabalho com economia aplicada e políticas públicas.</h1>
-        <h1 data-lang="en" style="display: none;">I am César Malaguti and I work with applied economics and public policies.</h1>
+      <div class="container">
+        <div class="profile-image">
+          <img src="imagens/imagesprofile.jpg.jpeg" alt="César Malaguti" />
+        </div>
+        <div class="hero-content">
+          <h1 data-lang="pt">Olá, sou César Malaguti e trabalho com economia aplicada e políticas públicas.</h1>
+          <h1 data-lang="en" style="display: none;">I am César Malaguti and I work with applied economics and public policies.</h1>
+        </div>
       </div>
     </section>
 
@@ -125,5 +96,6 @@
   <script src="js/admin.js"></script>
 </body>
 </html>
+
 
 
