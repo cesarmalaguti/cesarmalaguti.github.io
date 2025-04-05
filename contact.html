@@ -15,70 +15,83 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Sobre</a></li>
-                    <li><a href="publications.html">Publicações</a></li>
-                    <li><a href="projects.html">Projetos</a></li>
-                    <li><a href="experience.html">Experiência</a></li>
-                    <li><a href="education.html">Formação</a></li>
-                    <li><a href="contact.html" class="active">Contato</a></li>
+                    <li><a href="index.html"><span data-lang="pt">Sobre</span><span data-lang="en" style="display: none;">About</span></a></li>
+                    <li><a href="publications.html"><span data-lang="pt">Publicações</span><span data-lang="en" style="display: none;">Publications</span></a></li>
+                    <li><a href="projects.html"><span data-lang="pt">Projetos</span><span data-lang="en" style="display: none;">Projects</span></a></li>
+                    <li><a href="experience.html"><span data-lang="pt">Experiência</span><span data-lang="en" style="display: none;">Experience</span></a></li>
+                    <li><a href="education.html"><span data-lang="pt">Formação</span><span data-lang="en" style="display: none;">Education</span></a></li>
+                    <li><a href="contact.html" class="active"><span data-lang="pt">Contato</span><span data-lang="en" style="display: none;">Contact</span></a></li>
                 </ul>
             </nav>
+        </div>
+        <div class="lang-switch">
+            <img src="imagens/images.br.svg" alt="Português" onclick="switchLanguage('pt')">
+            <img src="imagens/images.uk.svg" alt="English" onclick="switchLanguage('en')">
         </div>
     </header>
 
     <main>
         <section class="contact">
             <div class="container">
-                <h1>Contato</h1>
-                
+                <h1 data-lang="pt">Contato</h1>
+                <h1 data-lang="en" style="display: none;">Contact</h1>
+
                 <div class="contact-info">
                     <div class="contact-item">
-                        <h2>Endereço</h2>
+                        <h2 data-lang="pt">Endereço</h2>
+                        <h2 data-lang="en" style="display: none;">Address</h2>
                         <p>R. Alda Maria Lyra Vicentini</p>
                         <p>Vitória, Espírito Santo, 29010-450</p>
-                        <p>Brasil</p>
+                        <p data-lang="pt">Brasil</p>
+                        <p data-lang="en" style="display: none;">Brazil</p>
                     </div>
-                    
+
                     <div class="contact-item">
-                        <h2>Telefone</h2>
+                        <h2 data-lang="pt">Telefone</h2>
+                        <h2 data-lang="en" style="display: none;">Phone</h2>
                         <p>+55(32)-99153-6980</p>
                     </div>
-                    
+
                     <div class="contact-item">
                         <h2>Email</h2>
                         <p><a href="mailto:cesarmalaguti@gmail.com">cesarmalaguti@gmail.com</a></p>
                     </div>
-                    
+
                     <div class="contact-item">
-                        <h2>Redes Sociais</h2>
+                        <h2 data-lang="pt">Redes Sociais</h2>
+                        <h2 data-lang="en" style="display: none;">Social Media</h2>
                         <p><a href="https://www.linkedin.com/in/cesarmalaguti" target="_blank">LinkedIn: cesarmalaguti</a></p>
                     </div>
                 </div>
-                
+
                 <div class="contact-form">
-                    <h2>Envie uma mensagem</h2>
+                    <h2 data-lang="pt">Envie uma mensagem</h2>
+                    <h2 data-lang="en" style="display: none;">Send a message</h2>
                     <form action="#" method="post" id="contactForm">
                         <div class="form-group">
-                            <label for="name">Nome</label>
+                            <label for="name"><span data-lang="pt">Nome</span><span data-lang="en" style="display: none;">Name</span></label>
                             <input type="text" id="name" name="name" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email" required>
                         </div>
-                        
+
                         <div class="form-group">
-                            <label for="subject">Assunto</label>
+                            <label for="subject"><span data-lang="pt">Assunto</span><span data-lang="en" style="display: none;">Subject</span></label>
                             <input type="text" id="subject" name="subject" required>
                         </div>
-                        
+
                         <div class="form-group">
-                            <label for="message">Mensagem</label>
+                            <label for="message"><span data-lang="pt">Mensagem</span><span data-lang="en" style="display: none;">Message</span></label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
-                        
-                        <button type="submit" class="btn-submit">Enviar Mensagem</button>
+
+                        <button type="submit" class="btn-submit">
+                            <span data-lang="pt">Enviar Mensagem</span>
+                            <span data-lang="en" style="display: none;">Send Message</span>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -87,11 +100,25 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 César Malaguti. Todos os direitos reservados.</p>
+            <p data-lang="pt">&copy; 2025 César Malaguti. Todos os direitos reservados.</p>
+            <p data-lang="en" style="display: none;">&copy; 2025 César Malaguti. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
-    <script src="js/admin.js"></script>
+    <script>
+        function switchLanguage(lang) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(el => {
+                el.style.display = el.getAttribute('data-lang') === lang ? 'inline' : 'none';
+            });
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        window.onload = () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'pt';
+            switchLanguage(savedLang);
+        };
+    </script>
 </body>
 </html>
+
