@@ -6,10 +6,32 @@
   <title>Projetos | César Malaguti</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/admin.css" />
+  <style>
+    .admin-access {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: none;
+    }
+
+    .admin-button {
+      background-color: #333;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    .admin-button:hover {
+      background-color: #555;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <div class="container">
+    <div class="container" style="position: relative;">
       <div class="logo">
         <a href="index.html">César Malaguti</a>
       </div>
@@ -23,6 +45,12 @@
           <li><a href="contact.html">Contato</a></li>
         </ul>
       </nav>
+
+      <!-- Botão de acesso ao modo administrador -->
+      <div class="admin-access" id="adminAccess">
+        <a href="admin.html" class="admin-button" data-lang="pt">Modo Administrador</a>
+        <a href="admin.html" class="admin-button" data-lang="en" style="display: none;">Admin Mode</a>
+      </div>
     </div>
   </header>
 
@@ -31,122 +59,10 @@
       <div class="container">
         <h1 class="editable" data-lang="pt">Projetos</h1>
         <h1 class="editable" data-lang="en" style="display:none;">Projects</h1>
+        
+        <div id="project-list">
+          <
 
-        <div id="project-list">Carregando projetos...</div>
-
-        <!-- Admin Panel -->
-        <div id="admin-panel" style="display:none; margin-top:2rem;">
-          <h3>Adicionar Projeto</h3>
-          <input type="text" id="new-project-name" placeholder="Nome do projeto" />
-          <textarea id="new-project-description" placeholder="Descrição do projeto"></textarea>
-          <button onclick="addProject()">Salvar</button>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p data-lang="pt">&copy; 2025 César Malaguti. Todos os direitos reservados.</p>
-      <p data-lang="en" style="display:none;">&copy; 2025 César Malaguti. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script>
-    const API_URL = "https://cesarmalaguti-site-backend.onrender.com";
-    const projectList = document.getElementById("project-list");
-
-    let projects = [];
-
-    function renderProjects() {
-      if (projects.length === 0) {
-        projectList.innerHTML = "<p>Nenhum projeto cadastrado ainda.</p>";
-        return;
-      }
-
-      const html = projects.map((project, index) => `
-        <div class="project-item">
-          <input value="${project.name}" onchange="updateField(${index}, 'name', this.value)" />
-          <textarea onchange="updateField(${index}, 'description', this.value)">${project.description || ""}</textarea>
-          <button onclick="saveProject(${index})">Salvar</button>
-          <button onclick="deleteProject(${index})">Excluir</button>
-        </div>
-      `).join("");
-
-      projectList.innerHTML = html;
-    }
-
-    function loadProjects() {
-      fetch(`${API_URL}/projects`)
-        .then(res => res.json())
-        .then(data => {
-          projects = data;
-          renderProjects();
-        })
-        .catch(() => {
-          projectList.innerHTML = "<p>Erro ao carregar projetos.</p>";
-        });
-    }
-
-    function updateField(index, field, value) {
-      projects[index][field] = value;
-    }
-
-    function saveProject(index) {
-      fetch(`${API_URL}/projects/${index}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(projects[index])
-      })
-        .then(res => res.json())
-        .then(() => {
-          alert("Projeto salvo!");
-          loadProjects();
-        });
-    }
-
-    function deleteProject(index) {
-      if (!confirm("Tem certeza que deseja excluir este projeto?")) return;
-
-      fetch(`${API_URL}/projects/${index}`, {
-        method: "DELETE"
-      })
-        .then(res => res.json())
-        .then(() => {
-          alert("Projeto excluído!");
-          loadProjects();
-        });
-    }
-
-    function addProject() {
-      const name = document.getElementById("new-project-name").value.trim();
-      const description = document.getElementById("new-project-description").value.trim();
-
-      if (!name || !description) {
-        alert("Preencha todos os campos.");
-        return;
-      }
-
-      fetch(`${API_URL}/projects`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, description })
-      })
-        .then(res => res.json())
-        .then(() => {
-          alert("Projeto adicionado!");
-          document.getElementById("new-project-name").value = "";
-          document.getElementById("new-project-description").value = "";
-          loadProjects();
-        });
-    }
-
-    if (localStorage.getItem("admin") === "true") {
-      document.getElementById("admin-panel").style.display = "block";
-    }
-
-    loadProjects();
-  </script>
 
 
 
